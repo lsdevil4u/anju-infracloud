@@ -1,0 +1,13 @@
+version: 'latest'
+
+services:
+  distro:
+    image: infracloudio/csvserver:latest
+    container_name: infra21
+    restart: always
+    entrypoint: tail -f /dev/null
+
+  links:
+    file:gencsv.sh
+    ports:
+      - "9393:9393"
